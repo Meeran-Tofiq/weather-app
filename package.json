@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "watch": "webapck --watch"
+    "watch": "webapck --watch",
+    "start": "webpack serve --open"
   },
   "repository": {
     "type": "git",
