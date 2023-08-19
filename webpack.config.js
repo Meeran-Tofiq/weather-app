@@ -27,4 +27,10 @@ module.exports = {
             },
         ],
     },
+    devServer: {
+        static: '/dist',
+    },
+    optimization: {
+        runtimeChunk: 'single',
+    }
 };
