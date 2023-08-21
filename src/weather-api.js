@@ -6,8 +6,11 @@ const getWeatherUrl = function(city) {
 
 const getWeatherInfo = function(city) {
     fetch(getWeatherUrl(city))
-        .then((val) => {
-            console.log(val);
+        .then((response) => {
+            return response.json();
+        })
+        .then(forecast => {
+            return(forecast);
         })
         .catch(reason => {
             console.error(reason);
