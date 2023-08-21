@@ -4,7 +4,17 @@ const loadPage = function () {
     // navigation at the top of the page
     const nav = createTopNav();
 
-    wrapper.append(nav);
+    // forecast of location for three days
+    const cardsContainer = document.createElement('div');
+    cardsContainer.classList.add('cards');
+
+    const card1 = createWeatherCard('day-1');
+    const card2 = createWeatherCard('day-2');
+    const card3 = createWeatherCard('day-3');
+
+    cardsContainer.append(card1, card2, card3);
+
+    wrapper.append(nav, cardsContainer);
     document.body.append(wrapper);
 };
 
@@ -53,6 +63,19 @@ const createTopNav = function () {
     topNav.append(searchForm, celBtn, fahBtn);
 
     return topNav;
+};
+
+const createWeatherCard = function (idName) {
+    const card = document.createElement('div');
+    card.setAttribute('id', idName);
+
+    const weekDay = document.createElement('h2');
+    const maxTemp = document.createElement('h1');
+    const minTemp = document.createElement('h3');
+    const weatherIcon = document.createElement('i');
+
+    card.append(weekDay, maxTemp, minTemp, weatherIcon);
+    return card;
 };
 
 export { loadPage };
