@@ -1,3 +1,3 @@
-import { getWeatherInfo } from "./weather-api";
+import { getWeatherInfo } from './weather-api';
 
-getWeatherInfo("Baghdad");
+getWeatherInfo('Baghdad');

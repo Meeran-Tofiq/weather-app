@@ -1,4 +1,4 @@
-const key = "0dad858d403c4228a32123248231908";
+const key = '0dad858d403c4228a32123248231908';
 
 const getWeatherUrl = function (city) {
     return `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=3`;
