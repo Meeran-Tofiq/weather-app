@@ -4,6 +4,9 @@ const loadPage = function () {
     // navigation at the top of the page
     const nav = createTopNav();
 
+    // current weather container
+    const current = createCurrentWeatherContainer();
+
     // forecast of location for three days
     const cardsContainer = document.createElement('div');
     cardsContainer.classList.add('cards');
@@ -14,7 +17,7 @@ const loadPage = function () {
 
     cardsContainer.append(card1, card2, card3);
 
-    wrapper.append(nav, cardsContainer);
+    wrapper.append(nav, current, cardsContainer);
     document.body.append(wrapper);
 };
 
@@ -67,6 +70,54 @@ const createTopNav = function () {
     return topNav;
 };
 
+const createCurrentWeatherContainer = function () {
+    const container = document.createElement('div');
+
+    // locationa and time
+    const placeTime = document.createElement('div');
+    const location = document.createElement('h1');
+    const time = document.createElement('span');
+
+    location.classList.add('location');
+    time.classList.add('time');
+
+    placeTime.append(location, time);
+
+    // basic info
+    const currentBasic = document.createElement('div');
+    const temp = document.createElement('h1');
+    const basicText = document.createElement('div');
+    const weatherDesc = document.createElement('span');
+    const feelsLike = document.createElement('span');
+    const windDesc = document.createElement('span');
+
+    currentBasic.classList.add('current-basic');
+    temp.classList.add('temp');
+    weatherDesc.classList.add('weather-desc');
+    feelsLike.classList.add('feels-like');
+    windDesc.classList.add('wind-desc');
+
+    basicText.append(weatherDesc, feelsLike, windDesc);
+    currentBasic.append(temp, basicText);
+
+    // less basic info
+    const currentComplex = document.createElement('div');
+    const windSpeed = document.createElement('span');
+    const humidity = document.createElement('span');
+    const uvIndex = document.createElement('span');
+
+    currentComplex.classList.add('current-complex');
+    windSpeed.classList.add('wind-speed');
+    humidity.classList.add('humidity');
+    uvIndex.classList.add('uv-index');
+
+    currentComplex.append(windSpeed, humidity, uvIndex);
+
+    // append everything
+    container.append(placeTime, currentBasic, currentComplex);
+    return container;
+};
+
 const createWeatherCard = function (idName) {
     const card = document.createElement('div');
     card.setAttribute('id', idName);
@@ -74,7 +125,11 @@ const createWeatherCard = function (idName) {
     const weekDay = document.createElement('h2');
     const maxTemp = document.createElement('h1');
     const minTemp = document.createElement('h3');
-    const weatherIcon = document.createElement('i');
+    const weatherIcon = document.createElement('span');
+
+    weekDay.classList.add('week-day');
+    maxTemp.classList.add('max-temp');
+    minTemp.classList.add('min-temp');
 
     card.append(weekDay, maxTemp, minTemp, weatherIcon);
     return card;
