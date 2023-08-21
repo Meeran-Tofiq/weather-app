@@ -10,6 +10,7 @@ const getWeatherInfo = function(city) {
             return response.json();
         })
         .then(forecast => {
+            console.log(forecast)
             return(forecast);
         })
         .catch(reason => {
