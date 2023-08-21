@@ -4,7 +4,7 @@ const getWeatherUrl = function (city) {
     return `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=3`;
 };
 
-const getWeatherInfo = function (city) {
+const getWeatherInfo = async function (city) {
     fetch(getWeatherUrl(city))
         .then((response) => {
             return response.json();
