@@ -24,6 +24,7 @@ const createSearchBar = function () {
     const searchBtn = document.createElement('button');
 
     search.setAttribute('type', 'search');
+    search.setAttribute('placeholder', 'Search by city name...');
     searchBtn.setAttribute('type', 'button');
 
     form.append(search, searchBtn);
@@ -33,6 +34,7 @@ const createSearchBar = function () {
 
 const createTemperatureButton = function (celsius = true) {
     const button = document.createElement('button');
+    button.innerText = celsius ? 'Celsius' : 'Fahrenheit';
     const buttonClass = celsius ? 'temp-c' : 'temp-f';
 
     button.classList.add(buttonClass);
