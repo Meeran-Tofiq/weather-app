@@ -5,17 +5,14 @@ const getWeatherUrl = function (city) {
 };
 
 const getWeatherInfo = async function (city) {
-    fetch(getWeatherUrl(city))
-        .then((response) => {
-            return response.json();
-        })
-        .then((forecast) => {
-            console.log(forecast);
-            return forecast;
-        })
-        .catch((reason) => {
-            console.error(reason);
-        });
+    try {
+        const response = await fetch(getWeatherUrl(city));
+        const forecast = await response.json();
+        return forecast;
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
 };
 
 export { getWeatherInfo };
