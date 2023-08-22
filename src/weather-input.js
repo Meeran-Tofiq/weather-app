@@ -1,12 +1,14 @@
 import { getWeatherInfo } from './weather-api';
 
+const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
 const showForecast = async function (city = 'As Sulaymaniyah') {
     const allInfo = await getWeatherInfo(city);
 
     const cel = document.querySelector('.temp-c').classList.contains('.active');
     console.log(allInfo);
     fillCurrent(allInfo, cel);
-    fillThreeDayForecast(allInfo.forecast, cel);
+    fillThreeDayForecast(allInfo.forecast.forecastday, cel);
 };
 
 const fillCurrent = function (info, celsius) {
@@ -49,6 +51,20 @@ const fillCurrent = function (info, celsius) {
     complexCont.querySelector('.uv-index').textContent = `${current.uv}`;
 };
 
-const fillThreeDayForecast = function (info) {};
+const fillThreeDayForecast = function (info, celsius) {
+    const cards = Array.from(document.querySelector('.cards').children);
+
+    cards.forEach((card, i) => {
+        const weekdayNum = new Date(info[i].date).getDay();
+        const weekday = weekdays[weekdayNum];
+
+        const maxTemp = celsius ? info[i].day.maxtemp_c : info[i].day.maxtemp_f;
+        const minTemp = celsius ? info[i].day.mintemp_c : info[i].day.mintemp_f;
+
+        card.querySelector('.week-day').textContent = weekday;
+        card.querySelector('.max-temp').textContent = maxTemp;
+        card.querySelector('.min-temp').textContent = minTemp;
+    });
+};
 
 export { showForecast };

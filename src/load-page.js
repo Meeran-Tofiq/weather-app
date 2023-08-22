@@ -121,9 +121,9 @@ const createWeatherCard = function (idName) {
     const card = document.createElement('div');
     card.setAttribute('id', idName);
 
-    const weekDay = document.createElement('h2');
-    const maxTemp = document.createElement('h1');
-    const minTemp = document.createElement('h3');
+    const weekDay = document.createElement('span');
+    const maxTemp = document.createElement('span');
+    const minTemp = document.createElement('span');
     const weatherIcon = document.createElement('span');
 
     weekDay.classList.add('week-day');
