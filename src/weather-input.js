@@ -27,7 +27,6 @@ const fillCurrent = function (info) {
     basicCont.querySelector('.weather-desc').textContent =
         current.condition.text;
     basicCont.querySelector('.feels-like').textContent = current.feelslike_c;
-    basicCont.querySelector('.wind-desc').textContent = current.temp_c;
 };
 
 const fillThreeDayForecast = function (info) {};
