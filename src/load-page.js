@@ -89,15 +89,13 @@ const createCurrentWeatherContainer = function () {
     const basicText = document.createElement('div');
     const weatherDesc = document.createElement('span');
     const feelsLike = document.createElement('span');
-    const windDesc = document.createElement('span');
 
     currentBasic.classList.add('current-basic');
     temp.classList.add('temp');
     weatherDesc.classList.add('weather-desc');
     feelsLike.classList.add('feels-like');
-    windDesc.classList.add('wind-desc');
 
-    basicText.append(weatherDesc, feelsLike, windDesc);
+    basicText.append(weatherDesc, feelsLike);
     currentBasic.append(temp, basicText);
 
     // less basic info
@@ -115,6 +113,7 @@ const createCurrentWeatherContainer = function () {
 
     // append everything
     container.append(placeTime, currentBasic, currentComplex);
+    container.setAttribute('id', 'current-weather');
     return container;
 };
 
