@@ -1,5 +1,5 @@
-import { getWeatherInfo } from './weather-api';
 import { loadPage } from './load-page';
+import { showForecast } from './weather-input';
 
-getWeatherInfo('Baghdad');
 loadPage();
+showForecast();
