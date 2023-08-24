@@ -1,14 +1,12 @@
-import { getWeatherInfo } from './weather-api';
+import { weatherData } from './weather-input';
 
 const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const showForecast = async function (city = 'As Sulaymaniyah') {
-    const allInfo = await getWeatherInfo(city);
-
-    const cel = document.querySelector('.temp-c').classList.contains('.active');
-    console.log(allInfo);
-    fillCurrent(allInfo, cel);
-    fillThreeDayForecast(allInfo.forecast.forecastday, cel);
+const showForecast = function (info = weatherData) {
+    let cel = document.querySelector('.temp-c').classList.contains('active');
+    console.log(cel);
+    fillCurrent(info, cel);
+    fillThreeDayForecast(info.forecast.forecastday, cel);
 };
 
 const fillCurrent = function (info, celsius) {

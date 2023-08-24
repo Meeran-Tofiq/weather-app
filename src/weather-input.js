@@ -1,16 +1,15 @@
 import { getWeatherInfo } from './weather-api';
+import { showForecast } from './weather-display';
 
-let weatherData;
+let weatherData = await getWeatherInfo('As Sulaymaniyah');
 
-const setupSearchBar = function () {
-    const form = document.querySelector('nav').querySelector('form');
-    const search = form.querySelector('#search');
-    const btn = form.querySelector('button');
-
-    btn.addEventListener('click', () => {
+const setupSearchBar = function (search, btn) {
+    btn.addEventListener('click', async () => {
+        console.log('Heloo');
         let city = search.value || 'As Sulaymaniyah';
-        weatherData = getWeatherInfo(city);
+        weatherData = await getWeatherInfo(city);
+        showForecast(weatherData);
     });
 };
 
-export { weatherData };
+export { weatherData, setupSearchBar };

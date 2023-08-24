@@ -1,3 +1,5 @@
+import { showForecast } from './weather-display';
+import { setupSearchBar, weatherData } from './weather-input';
 import { setupUnitButtons } from './weather-unit';
 
 const loadPage = function () {
@@ -21,6 +23,7 @@ const loadPage = function () {
 
     wrapper.append(nav, current, cardsContainer);
     document.body.append(wrapper);
+    showForecast(weatherData);
 };
 
 const createSearchBar = function () {
@@ -34,6 +37,7 @@ const createSearchBar = function () {
     searchBtn.setAttribute('type', 'button');
 
     form.append(search, searchBtn);
+    setupSearchBar(search, searchBtn);
 
     return form;
 };
