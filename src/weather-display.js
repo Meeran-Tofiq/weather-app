@@ -4,7 +4,6 @@ const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const showForecast = function (info = weatherData) {
     let cel = document.querySelector('.temp-c').classList.contains('active');
-    console.log(cel);
     fillCurrent(info, cel);
     fillThreeDayForecast(info.forecast.forecastday, cel);
 };

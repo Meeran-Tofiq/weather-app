@@ -5,7 +5,6 @@ let weatherData = await getWeatherInfo('As Sulaymaniyah');
 
 const setupSearchBar = function (search, btn) {
     btn.addEventListener('click', async () => {
-        console.log('Heloo');
         let city = search.value || 'As Sulaymaniyah';
         weatherData = await getWeatherInfo(city);
         showForecast(weatherData);
