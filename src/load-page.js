@@ -29,6 +29,7 @@ const createSearchBar = function () {
     const searchBtn = document.createElement('button');
 
     search.setAttribute('type', 'search');
+    search.setAttribute('id', 'search');
     search.setAttribute('placeholder', 'Search by city name...');
     searchBtn.setAttribute('type', 'button');
 
