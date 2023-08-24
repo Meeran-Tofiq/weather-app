@@ -39,6 +39,8 @@ const createSearchBar = function () {
     search.setAttribute('placeholder', 'Search by city name...');
     searchBtn.setAttribute('type', 'button');
 
+    searchBtn.innerHTML = '<span class="fa-solid fa-search"></span>';
+
     form.append(search, searchBtn);
     setupSearchBar(search, searchBtn);
 
