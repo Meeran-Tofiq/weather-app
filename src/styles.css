@@ -15,3 +15,31 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+form {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+form input {
+    flex: 1;
+    appearance: none;
+    border: none;
+    border-radius: 1rem;
+    height: 1.5rem;
+    padding: 1rem;
+}
+
+form button {
+    appearance: none;
+    position: relative;
+    left: -1.75rem;
+    background: none;
+    border: none;
+    border-radius: 100%;
+}
+
+form button:active {
+    appearance: none;
+    filter: brightness(50%);
+}
