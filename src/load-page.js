@@ -1,3 +1,5 @@
+import { setupUnitButtons } from './weather-unit';
+
 const loadPage = function () {
     const wrapper = document.createElement('main');
 
@@ -46,15 +48,6 @@ const createTemperatureButton = function (celsius = true) {
     return button;
 };
 
-const toggleWhichButtonActive = function (newActive, ...btns) {
-    newActive.addEventListener('click', () => {
-        newActive.classList.add('active');
-        btns.forEach((btn) => {
-            btn.classList.remove('active');
-        });
-    });
-};
-
 const createTopNav = function () {
     const topNav = document.createElement('nav');
 
@@ -62,8 +55,7 @@ const createTopNav = function () {
     const celBtn = createTemperatureButton(true);
     const fahBtn = createTemperatureButton(false);
 
-    toggleWhichButtonActive(celBtn, fahBtn);
-    toggleWhichButtonActive(fahBtn, celBtn);
+    setupUnitButtons(celBtn, fahBtn);
 
     topNav.append(searchForm, celBtn, fahBtn);
 
