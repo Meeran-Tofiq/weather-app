@@ -16,9 +16,17 @@ main {
     align-items: center;
 }
 
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    align-items: center;
+}
+
 form {
     display: flex;
     margin-bottom: 1rem;
+    grid-column: 1 / span 2;
 }
 
 form input {
@@ -42,4 +50,22 @@ form button {
 form button:active {
     appearance: none;
     filter: brightness(50%);
+}
+
+form ~ button {
+    justify-self: center;
+    width: fit-content;
+
+    position: relative;
+    left: -1rem;
+    
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    filter: brightness(80%);
+}
+
+button.active {
+    border: 2px solid black;
+    filter: brightness(100%);
 }
