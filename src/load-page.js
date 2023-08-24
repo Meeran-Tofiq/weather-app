@@ -1,9 +1,12 @@
 import { showForecast } from './weather-display';
 import { setupSearchBar, weatherData } from './weather-input';
 import { setupUnitButtons } from './weather-unit';
+import skyPhoto from './img/james-lee-sky-photo.jpg';
 
 const loadPage = function () {
+    console.log(skyPhoto);
     const wrapper = document.createElement('main');
+    wrapper.style.backgroundImage = `url("${skyPhoto}")`;
 
     // navigation at the top of the page
     const nav = createTopNav();
