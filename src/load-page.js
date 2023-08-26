@@ -6,7 +6,7 @@ import skyPhoto from './img/quino-al-picture.jpg';
 const loadPage = function () {
     console.log(skyPhoto);
     const wrapper = document.createElement('main');
-    wrapper.style.backgroundImage = `url("${skyPhoto}")`;
+    wrapper.style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("${skyPhoto}")`;
     wrapper.style.backgroundSize = '100vw';
 
     // navigation at the top of the page
