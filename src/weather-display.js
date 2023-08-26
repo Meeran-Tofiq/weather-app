@@ -20,7 +20,7 @@ const fillCurrent = function (info, celsius) {
     const currentFeelsLike = celsius
         ? current.feelslike_c
         : current.feelslike_f;
-    const currentWindSpeed = celsius ? current.wind_kph : current.mph;
+    const currentWindSpeed = celsius ? current.wind_kph : current.wind_mph;
     const speedUnit = celsius ? 'kph' : 'mph';
 
     // location and time
