@@ -38,14 +38,16 @@ const fillCurrent = function (info, celsius) {
         current.condition.text;
     basicCont.querySelector(
         '.feels-like'
-    ).textContent = `${currentFeelsLike} ${tempUnit}`;
+    ).textContent = `Feels like: ${currentFeelsLike} ${tempUnit}`;
 
     //complex info
     complexCont.querySelector(
         '.wind-speed'
-    ).textContent = `${currentWindSpeed} ${speedUnit}`;
-    complexCont.querySelector('.humidity').textContent = `${current.humidity}%`;
-    complexCont.querySelector('.uv-index').textContent = `${current.uv}`;
+    ).textContent = `wind: ${currentWindSpeed} ${speedUnit}`;
+    complexCont.querySelector(
+        '.humidity'
+    ).textContent = `humidity: ${current.humidity}%`;
+    complexCont.querySelector('.uv-index').textContent = `UV: ${current.uv}`;
 };
 
 const fillThreeDayForecast = function (info, celsius) {
