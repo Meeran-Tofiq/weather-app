@@ -28,8 +28,9 @@ const loadPage = function () {
     // Footer for credits
     const footer = createFooter();
 
-    wrapper.append(nav, current, cardsContainer, footer);
+    wrapper.append(nav, current, cardsContainer);
     document.body.append(wrapper);
+    document.body.append(footer);
     showForecast(weatherData);
 };
 
@@ -151,7 +152,7 @@ const createFooter = function () {
     apiCredits.innerHTML =
         'Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>';
     creatorCredits.innerHTML =
-        'Made by Meeran Tofiq <a href="https://github.com/Meeran-Tofiq"><i class="fa-brands fa-github"></a>';
+        'Made by <a href="https://github.com/Meeran-Tofiq">Meeran Tofiq <i class="fa-brands fa-github"></a>';
     imgCredits.innerHTML =
         'Background image by <a href="https://unsplash.com/@quinoal">Quino Al</a>';
 
