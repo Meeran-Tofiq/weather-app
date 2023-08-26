@@ -1,0 +1,156 @@
+/*!*******************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!./src/styles.css ***!
+  \*******************************************************************/
+:root {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    align-items: center;
+
+    margin-top: 1.5rem;
+    margin-bottom: 7rem;
+}
+
+form {
+    display: flex;
+    margin-bottom: 1rem;
+    grid-column: 1 / span 2;
+}
+
+form input {
+    flex: 1;
+    appearance: none;
+    border: none;
+    border-radius: 1rem;
+    height: 1.5rem;
+    padding: 1rem;
+}
+
+form button {
+    appearance: none;
+    position: relative;
+    left: -2rem;
+    background: none;
+    border: none;
+    border-radius: 100%;
+}
+
+form button:active {
+    appearance: none;
+    filter: brightness(50%);
+}
+
+form ~ button {
+    justify-self: center;
+    width: fit-content;
+
+    position: relative;
+    left: -1rem;
+    
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    filter: brightness(70%);
+}
+
+button.active {
+    filter: brightness(100%);
+}
+
+#current-weather {
+    display: grid;
+    align-self: flex-start;
+    padding: 2rem;
+    gap: 1.5rem;
+    font-size: 20px;
+}
+
+.place-time {
+    display: grid;
+    justify-content: center;
+}
+
+.place-time span.time {
+    justify-self: center;
+}
+
+.place-time h1{
+    margin-top: 0;
+}
+
+.current-basic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.current-basic div {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.current-complex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+}
+
+.cards div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+    font-size: 18px;
+}
+
+.cards span.week-day {
+    font-size: 35px;
+}
+
+.cards span.max-temp {
+    font-size: 24px;
+}
+
+footer {
+    display: flex;
+    position: relative;
+    top: -3vh;
+
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(128,128,128,0.4);
+
+    width: 100%;
+    height: 3vh;
+
+    color: white;
+}
+
+footer a {
+    color: white;
+}
