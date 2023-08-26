@@ -1,12 +1,13 @@
 import { showForecast } from './weather-display';
 import { setupSearchBar, weatherData } from './weather-input';
 import { setupUnitButtons } from './weather-unit';
-import skyPhoto from './img/james-lee-sky-photo.jpg';
+import skyPhoto from './img/quino-al-picture.jpg';
 
 const loadPage = function () {
     console.log(skyPhoto);
     const wrapper = document.createElement('main');
     wrapper.style.backgroundImage = `url("${skyPhoto}")`;
+    wrapper.style.backgroundSize = '100vw';
 
     // navigation at the top of the page
     const nav = createTopNav();
@@ -83,6 +84,7 @@ const createCurrentWeatherContainer = function () {
     location.classList.add('location');
     time.classList.add('time');
 
+    placeTime.classList.add('place-time');
     placeTime.append(location, time);
 
     // basic info
