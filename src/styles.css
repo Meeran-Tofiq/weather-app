@@ -110,3 +110,25 @@ button.active {
     display: flex;
     justify-content: space-around;
 }
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+}
+
+.cards div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+    font-size: 18px;
+}
+
+.cards span.week-day {
+    font-size: 35px;
+}
+
+.cards span.max-temp {
+    font-size: 24px;
+}
