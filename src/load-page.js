@@ -25,7 +25,10 @@ const loadPage = function () {
 
     cardsContainer.append(card1, card2, card3);
 
-    wrapper.append(nav, current, cardsContainer);
+    // Footer for credits
+    const footer = createFooter();
+
+    wrapper.append(nav, current, cardsContainer, footer);
     document.body.append(wrapper);
     showForecast(weatherData);
 };
@@ -136,6 +139,25 @@ const createWeatherCard = function (idName) {
 
     card.append(weekDay, maxTemp, minTemp, weatherIcon);
     return card;
+};
+
+const createFooter = function () {
+    const footer = document.createElement('footer');
+
+    const apiCredits = document.createElement('span');
+    const creatorCredits = document.createElement('span');
+    const imgCredits = document.createElement('span');
+
+    apiCredits.innerHTML =
+        'Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>';
+    creatorCredits.innerHTML =
+        'Made by Meeran Tofiq <a href="https://github.com/Meeran-Tofiq"><i class="fa-brands fa-github"></a>';
+    imgCredits.innerHTML =
+        'Background image by <a href="https://unsplash.com/@quinoal">Quino Al</a>';
+
+    footer.append(apiCredits, creatorCredits, imgCredits);
+
+    return footer;
 };
 
 export { loadPage };
